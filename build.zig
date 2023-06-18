@@ -21,7 +21,7 @@ pub fn build(b: *std.Build) void {
             lz4dir ++ "lz4hc.c",
             lz4dir ++ "xxhash.c",
         },
-        &.{},
+        &.{if (lib.target_info.target.os.tag == .windows) "-DLZ4_DLL_EXPORT=1" else ""},
     );
 
     b.installArtifact(lib);
