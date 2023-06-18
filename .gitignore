@@ -41,3 +41,7 @@ ld.exe*
 # test artifacts
 *.lz4
 tmp*
+
+# Zig
+zig-cache/
+zig-out/
